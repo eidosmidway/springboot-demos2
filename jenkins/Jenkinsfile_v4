@@ -30,7 +30,7 @@ pipeline {
                 echo "stage test"
                 timeout(time: 2, unit: 'MINUTES'){
                     // Se cambia <test> por <install> para que se genere el reporte de jacoco
-                    bat "mvn clean install repasando-programacion/pom.xml"
+                    bat "mvn clean install -f repasando-programacion/pom.xml"
                 }
             }
         }
