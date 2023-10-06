@@ -11,7 +11,7 @@ pipeline {
             steps {
                 timeout(time: 2, unit: 'MINUTES'){
                     git 'https://github.com/robinarehen/springboot-demos.git'
-                    git 'https://github.com/robinarehen/repasando-programacion.git'
+                    //git 'https://github.com/robinarehen/repasando-programacion.git'
                 }
             }
         }
