@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo "stage build"
                 timeout(time: 2, unit: 'MINUTES'){
-                    bat "mvn -DskipTests clean package repasando-programacion/pom.xml"
+                    bat "mvn -DskipTests clean package -f repasando-programacion/pom.xml"
                 }
             }
         }
