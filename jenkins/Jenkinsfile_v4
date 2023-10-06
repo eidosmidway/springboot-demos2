@@ -9,6 +9,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
+                echo "stage clone"
                 timeout(time: 2, unit: 'MINUTES'){
                     git 'https://github.com/robinarehen/springboot-demos.git'
                     //git 'https://github.com/robinarehen/repasando-programacion.git'
@@ -17,13 +18,15 @@ pipeline {
         }
         stage('Build') {
             steps {
+                echo "stage build"
                 timeout(time: 2, unit: 'MINUTES'){
-                    sh "mvn -DskipTests clean package -f repasando-programacion/pom.xml"
+                    bat "mvn -DskipTests clean package -f repasando-programacion/pom.xml"
                 }
             }
         }
         stage('Test') {
             steps {
+                echo "stage test"
                 timeout(time: 2, unit: 'MINUTES'){
                     // Se cambia <test> por <install> para que se genere el reporte de jacoco
                     sh "mvn clean install -f repasando-programacion/pom.xml"
